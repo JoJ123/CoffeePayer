@@ -7,10 +7,7 @@ With this application you can scan the RFID-cards of you collegues and pick the 
 
 Colleagues, you drink often coffee with, could be added as contacts to list them with their names, all other cards will be added with a Guest Name.
 
-![alt text](https://github.com/JoJ123/CoffeePayer/blob/main/images/screen_list.jpg?raw=true)
-
-![alt text](https://github.com/JoJ123/CoffeePayer/blob/main/images/screen_contacts.jpg?raw=true)
-
-![alt text](https://github.com/JoJ123/CoffeePayer/blob/main/images/screen_addcontact.jpg?raw=true)
-
-![alt text](https://github.com/JoJ123/CoffeePayer/blob/main/images/screen_winner.jpg?raw=true)
+<img src="https://github.com/JoJ123/CoffeePayer/blob/main/images/screen_list.jpg?raw=true" alt="drawing" width="200"/>
+<img src="https://github.com/JoJ123/CoffeePayer/blob/main/images/screen_contacts.jpg?raw=true" alt="drawing" width="200"/>
+<img src="https://github.com/JoJ123/CoffeePayer/blob/main/images/screen_addcontact.jpg?raw=true" alt="drawing" width="200"/>
+<img src="https://github.com/JoJ123/CoffeePayer/blob/main/images/screen_winner.jpg?raw=true" alt="drawing" width="200"/>
