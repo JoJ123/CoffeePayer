@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CoffeePayer</string>
+    <string name="selectPayer">Pick the winner!</string>
+    <string name="managePayers">Manage Payers</string>
+    <string name="winner">Winner</string>
+    <string name="removePayers">Remove Payer(s)</string>
+    <string name="addGuest">Add Guest</string>
+    <string name="addPayerMessage">Scan a tag to add a new payer to this round.</string>
+    <string name="addPayerContactMessage">Scan a tag to add a new payer to your contacts.</string>
+    <string name="tapToDeleteMessage">Tap to remove a payer from the list.</string>
+    <string name="addPayer">Add Payer</string>
+    <string name="enterName">Enter name:</string>
+</resources>
