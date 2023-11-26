@@ -3,7 +3,10 @@ package com.office.coffeePayer;
 import android.content.Context;
 import android.os.Build;
 import android.util.SparseBooleanArray;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
 
@@ -27,7 +30,23 @@ public class PayerUtils {
 
     public static ArrayAdapter<String> getDisplayAdapter(ArrayList<Payer> al_payers, Context context, int layout) {
         String[] payerString = al_payers.stream().map(Objects::toString).toArray(String[]::new);
-        return new ArrayAdapter(context, layout, payerString);
+        return new ArrayAdapter(context, layout, android.R.id.text1, al_payers) {
+            public View getView(int position, View convertView, ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+                TextView text1 = (TextView) view.findViewById(android.R.id.text1);
+                TextView text2 = (TextView) view.findViewById(android.R.id.text2);
+
+                String name = al_payers.get(position).getName();
+                text1.setText(name);
+                if (!name.startsWith("Guest ")) {
+                    text2.setText(al_payers.get(position).getStat() + "%");
+                } else {
+                    text2.setText("- %");
+                }
+
+                return view;
+            }
+        };
     }
 
     public static void filterPayerList(Iterator<Payer> it, SparseBooleanArray checked) {
@@ -60,6 +79,8 @@ public class PayerUtils {
         for (Object payer : payerObjects) {
             payerList.add((Payer) payer);
         }
+
+        payerList.sort(new PayerCompare());
 
         return payerList;
     }

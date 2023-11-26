@@ -10,19 +10,26 @@ import androidx.annotation.NonNull;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
+import java.util.Comparator;
 
 public class Payer implements Parcelable {
     String id;
     String name;
+    Long total;
+    Long wins;
 
     public Payer(String id, String name) {
         this.id = id;
         this.name = name;
+        this.total = 0L;
+        this.wins = 0L;
     }
 
     protected Payer(Parcel in) {
         id = in.readString();
         name = in.readString();
+        total = in.readLong();
+        wins = in.readLong();
     }
 
 
@@ -40,6 +47,30 @@ public class Payer implements Parcelable {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public Long getTotal() {
+        return total;
+    }
+
+    public void setTotal(Long total) {
+        this.total = total;
+    }
+
+    public Long getWins() {
+        return wins;
+    }
+
+    public void setWins(Long wins) {
+        this.wins = wins;
+    }
+
+    public Long getStat() {
+        if (total == 0) {
+            return 0L;
+        }
+
+        return (Long)((wins * 100L) / total);
     }
 
     public static final Creator<Payer> CREATOR = new Creator<Payer>() {
@@ -69,5 +100,7 @@ public class Payer implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.id);
         dest.writeString(this.name);
+        dest.writeLong(this.total);
+        dest.writeLong(this.wins);
     }
 }

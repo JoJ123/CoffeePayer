@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">CoffeePayer</string>
     <string name="selectPayer">Pick the winner!</string>
+    <string name="resetStats">Reset Stats!</string>
     <string name="managePayers">Manage Payers</string>
     <string name="winner">Winner</string>
     <string name="removePayers">Remove Payer(s)</string>
